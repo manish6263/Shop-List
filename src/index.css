@@ -5,9 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #f1f4f8; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.shop-title{
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f1f4f8;
+}
+.form-container{
+  background-color: #f1f4f8;
+  border-radius: 12px;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+}
+.shop{
+  border: 3px solid #f1f4f8;
+  padding: 3px;
+  border-radius: 12px;
 }
