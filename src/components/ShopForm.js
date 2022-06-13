@@ -32,7 +32,7 @@ const ShopForm = () => {
         const attr = document.createAttribute('data-id');
         attr.value = id;
         element.setAttributeNode(attr);
-        element.classList.add('row', 'text-center', 'mb-2', 'shop');
+        element.classList.add('row', 'text-center', 'mb-3', 'shop');
         element.innerHTML = `<div class="flex-grow-1 col-11 row g-2">
         <div class="col-sm-6 col-md-4 col-lg-3">
             <label class='fw-bold' htmlFor='1'>Shop Name: </label>
@@ -126,14 +126,14 @@ const ShopForm = () => {
             }
         });
 
-        if(area.value === 'all'){
+        if (area.value === 'all') {
             showStoredShops();
         }
-        else{
+        else {
             const listContainer = document.querySelector('.list-container');
             listContainer.innerHTML = '';
-            if(shops.length > 0){
-                shops.forEach(shop=>{
+            if (shops.length > 0) {
+                shops.forEach(shop => {
                     createShop(shop, shop.id);
                 });
             }
@@ -141,7 +141,7 @@ const ShopForm = () => {
     }
 
     //select category change..........
-      const selectCategoryChange = (e) => {
+    const selectCategoryChange = (e) => {
         e.preventDefault();
         setCategorySelected(e.currentTarget.value);
         const category = document.querySelector('.select-category');
@@ -152,14 +152,14 @@ const ShopForm = () => {
             }
         });
 
-        if(category.value === 'all'){
+        if (category.value === 'all') {
             showStoredShops();
         }
-        else{
+        else {
             const listContainer = document.querySelector('.list-container');
             listContainer.innerHTML = '';
-            if(shops.length > 0){
-                shops.forEach(shop=>{
+            if (shops.length > 0) {
+                shops.forEach(shop => {
                     createShop(shop, shop.id);
                 });
             }
@@ -278,31 +278,29 @@ const ShopForm = () => {
             </div>
 
             <div className='container'>
-                <div className="d-flex justify-content-between align-items-center">
-                    <h2 className='my-4'>Shop List</h2>
-                    <div>
-                        <select className='p-2 fs-4 mx-2 select-area' value={areaSelected} onChange={selectAreaChange} style={{ border: '3px solid #f1f4f8', borderRadius: '10px' }}>
-                            <option value="all" className='filter-area'>Filter by Area</option>
-                            <option value="Thane" className='filter-area'>Thane</option>
-                            <option value="Pune" className='filter-area'>Pune</option>
-                            <option value="Mumbai Suburban" className='filter-area'>Mumbai Suburban</option>
-                            <option value="Nashik" className='filter-area'>Nashik</option>
-                            <option value="Nagpur" className='filter-area'>Nagpur</option>
-                            <option value="Ahmednager" className='filter-area'>Ahmednager</option>
-                            <option value="Solapur" className='filter-area'>Solapur</option>
-                        </select>
-                        <select className='p-2 fs-4 mx-2 select-category' value={categorySelected} onChange={selectCategoryChange} style={{ border: '3px solid #f1f4f8', borderRadius: '10px' }}>
-                            <option value='all'>Filter by Category</option>
-                            <option value="Grocery">Grocery</option>
-                            <option value="Butcher">Butcher</option>
-                            <option value="Baker">Baker</option>
-                            <option value="Chemist">Chemist</option>
-                            <option value="Stationery">Stationary</option>
-                        </select>
-                    </div>
+                <h2 className='my-4 text-center fs-1' style={{borderTop: '2px solid #f1f4f8'}}>Shop List</h2>
+                <div className='text-center'>
+                    <select className='p-2 fs-4 m-2 select-area' value={areaSelected} onChange={selectAreaChange} style={{ border: '3px solid #f1f4f8', borderRadius: '10px' }}>
+                        <option value="all" className='filter-area'>Filter by Area</option>
+                        <option value="Thane" className='filter-area'>Thane</option>
+                        <option value="Pune" className='filter-area'>Pune</option>
+                        <option value="Mumbai Suburban" className='filter-area'>Mumbai Suburban</option>
+                        <option value="Nashik" className='filter-area'>Nashik</option>
+                        <option value="Nagpur" className='filter-area'>Nagpur</option>
+                        <option value="Ahmednager" className='filter-area'>Ahmednager</option>
+                        <option value="Solapur" className='filter-area'>Solapur</option>
+                    </select>
+                    <select className='p-2 fs-4 m-2 select-category' value={categorySelected} onChange={selectCategoryChange} style={{ border: '3px solid #f1f4f8', borderRadius: '10px' }}>
+                        <option value='all'>Filter by Category</option>
+                        <option value="Grocery">Grocery</option>
+                        <option value="Butcher">Butcher</option>
+                        <option value="Baker">Baker</option>
+                        <option value="Chemist">Chemist</option>
+                        <option value="Stationery">Stationary</option>
+                    </select>
                 </div>
                 <div className="text-center">
-                    <button className="btn btn-primary my-2 text-center show-local-shops" onClick={showStoredShops}>Reload Shops</button>
+                    <button className="btn btn-primary my-3 text-center show-local-shops" onClick={showStoredShops}>Reload Shops</button>
                     <div className="list-container">
 
                     </div>
